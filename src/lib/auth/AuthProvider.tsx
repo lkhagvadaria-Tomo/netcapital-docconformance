@@ -91,7 +91,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
         // hosted-domain restriction is enforced server-side too (users.email
         // check constraint + RLS), this is just the friendlier UX gate.
         queryParams: { hd: "netgroup.mn" },
-        redirectTo: window.location.origin,
+        // window.location.origin alone drops the GitHub Pages project-site
+        // subpath (/netcapital-docconformance/) — import.meta.env.BASE_URL
+        // is Vite's own record of vite.config.ts's `base`, so this resolves
+        // correctly in both dev (base "/") and the deployed build.
+        redirectTo: window.location.origin + import.meta.env.BASE_URL,
       },
     });
   }, []);
