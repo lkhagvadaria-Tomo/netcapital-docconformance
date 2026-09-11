@@ -23,7 +23,28 @@ contract), Rule Set review дэлгэц (`/frameworks` — accept/edit/reject,
 
 Phase 3-с хойшхийг зөвхөн хэрэглэгчийн шууд зөвшөөрлөөр эхэлнэ.
 
-## Түргэн эхлэх
+## Шууд ордог сайт (GitHub Pages)
+
+**https://lkhagvadaria-tomo.github.io/netcapital-docconformance/**
+
+`main`-д push хийх бүрт `.github/workflows/deploy-pages.yml` автоматаар
+build хийж, дээрх URL руу deploy хийдэг. Repo secret
+(`VITE_SUPABASE_URL`/`VITE_SUPABASE_ANON_KEY`) тохируулаагүй бол **автоматаар
+Хөгжүүлэлтийн (mock) горимд** ордог — өөрөөр хэлбэл энэ URL яг одоо ч
+ажиллана, зөвхөн жишээ хэрэглэгчээр (mock) нэвтэрч үзэх боломжтой, өгөгдөл
+хадгалагдахгүй, Google-ээр нэвтрэх идэвхгүй.
+
+**Жинхэнэ ажиллагаатай (Google OAuth, өгөгдөл хадгалдаг) болгох:**
+1. Доорх "Жинхэнэ Supabase project холбох"-ыг дага (Supabase project
+   үүсгэх, migration ажиллуулах, Google OAuth provider тохируулах).
+2. GitHub repo → Settings → Secrets and variables → Actions → New repository
+   secret: `VITE_SUPABASE_URL`, `VITE_SUPABASE_ANON_KEY` (Supabase Project
+   Settings → API-аас).
+3. Actions таб → "Deploy to GitHub Pages" → Run workflow (эсвэл `main`-д
+   дурын commit push хий) — дараагийн deploy-оос эхлэн сайт жинхэнэ Supabase
+   рүү холбогдоно.
+
+## Түргэн эхлэх (локал)
 
 ```bash
 npm install
