@@ -1,0 +1,53 @@
+// Mongolian Cyrillic primary UI strings. Governance terms (OKR, KR, Gate,
+// RACI, SLA, KPI, Policy/Standard/Procedure) stay in English verbatim per
+// master spec §2 — do not translate those; every other UI label is Mongolian.
+export const mn = {
+  nav: {
+    home: "Нүүр",
+    okrDocuments: "OKR ба баримтууд",
+    frameworksRules: "Лавлагаа баримт ба дүрэм",
+    audit: "Шалгалт",
+    findings: "Илэрц",
+    outputs: "Гаралт",
+    approvals: "Батлалт",
+    admin: "Админ",
+  },
+  auth: {
+    signInWithGoogle: "Google-ээр нэвтрэх",
+    domainRestricted: "Зөвхөн @netgroup.mn домэйн бүхий бүртгэлээр нэвтэрнэ.",
+    mockModeLabel: "Хөгжүүлэлтийн горим — хэрэглэгч гараар сонгогдоно",
+    signOut: "Гарах",
+  },
+  admin: {
+    title: "Админ",
+    units: "Нэгжүүд",
+    users: "Хэрэглэгчид",
+    addUnit: "Нэгж нэмэх",
+    addUser: "Хэрэглэгч нэмэх",
+    code: "Код",
+    nameMn: "Нэр (монгол)",
+    nameEn: "Нэр (англи)",
+    email: "И-мэйл",
+    unit: "Нэгж",
+    role: "Эрх",
+    save: "Хадгалах",
+    unassignedNotice:
+      "Шинээр нэвтэрсэн хэрэглэгч эхлээд “Хуваарилагдаагүй” нэгжид орно — эндээс бодит нэгжид шилжүүлнэ үү.",
+  },
+  home: {
+    title: "Нүүр",
+    subtitle: "Нэгжийн нийцлийн ерөнхий байдал",
+    placeholder:
+      "Аудит, оноо, гаралтын дэлгэц Phase 2–6-д нэмэгдэнэ (§11). Одоогоор Phase 1: Auth/Units/Users/Roles/RLS.",
+  },
+  theme: {
+    light: "Цайвар",
+    dark: "Бараан",
+    system: "Систем",
+  },
+  common: {
+    loading: "Ачаалж байна…",
+    save: "Хадгалах",
+    cancel: "Болих",
+  },
+} as const;

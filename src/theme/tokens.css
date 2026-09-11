@@ -1,0 +1,109 @@
+/* Design tokens — §9. Every color is a CSS custom property on :root;
+   dark mode redefines only the tokens, twice (media-query guess + explicit
+   toggle), so an explicit choice always wins over the OS setting. */
+
+:root {
+  --bg: #eef0ee;
+  --surface: #ffffff;
+  --surface-2: #f4f6f3;
+  --surface-3: #e9ece8;
+  --ink: #1b2321;
+  --ink-2: #55605c;
+  --ink-3: #8b958f;
+  --line: rgba(27, 35, 33, 0.14);
+  --line-soft: rgba(27, 35, 33, 0.08);
+
+  --accent: #33507a;
+  --accent-strong: #233a5c;
+  --accent-ink: #ffffff;
+  --accent-soft: #e1e7f1;
+
+  /* Severity — colour-blind validated (never rely on hue alone; every use
+     pairs the colour with a text label or icon, per §9). */
+  --good: #1f8f7a;
+  --good-soft: #dceee9;
+  --warn: #b1811e;
+  --warn-soft: #f3e7ce;
+  --crit: #a6332e;
+  --crit-soft: #f5dedb;
+
+  --shadow: 0 1px 2px rgba(20, 26, 24, 0.06), 0 6px 20px -8px rgba(20, 26, 24, 0.18);
+  --radius: 10px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11151a;
+    --surface: #171c22;
+    --surface-2: #1c222a;
+    --surface-3: #232a33;
+    --ink: #e7ebea;
+    --ink-2: #aeb6b8;
+    --ink-3: #727c7e;
+    --line: rgba(231, 235, 234, 0.14);
+    --line-soft: rgba(231, 235, 234, 0.08);
+
+    --accent: #8ca5d1;
+    --accent-strong: #aec1e3;
+    --accent-ink: #0f1620;
+    --accent-soft: rgba(140, 165, 209, 0.16);
+
+    --good: #2e9e8f;
+    --good-soft: rgba(46, 158, 143, 0.18);
+    --warn: #b18f34;
+    --warn-soft: rgba(177, 143, 52, 0.2);
+    --crit: #c13b4a;
+    --crit-soft: rgba(193, 59, 74, 0.2);
+
+    --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 24px -10px rgba(0, 0, 0, 0.5);
+  }
+}
+
+:root[data-theme="dark"] {
+  --bg: #11151a;
+  --surface: #171c22;
+  --surface-2: #1c222a;
+  --surface-3: #232a33;
+  --ink: #e7ebea;
+  --ink-2: #aeb6b8;
+  --ink-3: #727c7e;
+  --line: rgba(231, 235, 234, 0.14);
+  --line-soft: rgba(231, 235, 234, 0.08);
+
+  --accent: #8ca5d1;
+  --accent-strong: #aec1e3;
+  --accent-ink: #0f1620;
+  --accent-soft: rgba(140, 165, 209, 0.16);
+
+  --good: #2e9e8f;
+  --good-soft: rgba(46, 158, 143, 0.18);
+  --warn: #b18f34;
+  --warn-soft: rgba(177, 143, 52, 0.2);
+  --crit: #c13b4a;
+  --crit-soft: rgba(193, 59, 74, 0.2);
+
+  --shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 6px 24px -10px rgba(0, 0, 0, 0.5);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: "IBM Plex Sans", system-ui, -apple-system, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+.num {
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+[hidden] {
+  display: none !important;
+}
