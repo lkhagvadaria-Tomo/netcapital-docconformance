@@ -4,6 +4,7 @@ import { SignIn } from "@/components/SignIn";
 import { mn } from "@/i18n/mn";
 import { Home } from "@/pages/Home";
 import { Admin } from "@/pages/Admin";
+import { Frameworks } from "@/pages/Frameworks";
 import { ComingSoon } from "@/pages/ComingSoon";
 
 export default function App() {
@@ -28,10 +29,7 @@ export default function App() {
         path="/okr"
         element={<ComingSoon title={mn.nav.okrDocuments} phase="Phase 3–5" />}
       />
-      <Route
-        path="/frameworks"
-        element={<ComingSoon title={mn.nav.frameworksRules} phase="Phase 2" />}
-      />
+      <Route path="/frameworks" element={<Frameworks />} />
       <Route
         path="/audit"
         element={<ComingSoon title={mn.nav.audit} phase="Phase 3–5" />}
